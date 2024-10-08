@@ -36,6 +36,7 @@ int main() {
         }
         if(isStartPoint) break;
     }
+    if(!isStartPoint) t = -1;
     cout << t;
     return 0;
 }
