@@ -20,7 +20,7 @@ int main() {
 
     for(int i = 0 ; i < cmd.length() ; i++){
         if(cmd[i] == 'L') currDir = (currDir - 1 + 4) % 4;
-        else if (cmd[i] == 'R') currDir = (currDir - 1) % 4;
+        else if (cmd[i] == 'R') currDir = (currDir + 1) % 4;
         else x += dx[currDir], y += dy[currDir];
         
         t++;
