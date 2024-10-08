@@ -7,9 +7,9 @@ bool InRange(int n, int nx, int ny){
 }
 
 int getDir(char dir){
-    if(dir == 'E') return 0;
-    else if(dir == 'S') return 1;
-    else if(dir == 'W') return 2;
+    if(dir == 'R') return 0;
+    else if(dir == 'D') return 1;
+    else if(dir == 'U') return 2;
     else return 3;
 }
 
