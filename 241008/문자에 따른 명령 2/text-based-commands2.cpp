@@ -8,9 +8,9 @@ int main() {
     int currDir = 3;
     int dx[4] = {1, 0, -1 ,0}, dy[4] = {0, -1, 0, 1};
 
-    char cmd[100000];
+    string cmd;
     cin >> cmd;
-    for(int i = 0 ; cmd[i] != '\0' ; i++){
+    for(int i = 0 ; i < cmd.length() ; i++){
         if(cmd[i] == 'F')
             x += dx[currDir], y += dy[currDir];
         else if(cmd[i] == 'L')
