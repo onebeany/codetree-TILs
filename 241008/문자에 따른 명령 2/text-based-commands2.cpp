@@ -16,7 +16,7 @@ int main() {
         else if(cmd[i] == 'L')
             currDir = (currDir + 3) % 4;
         else
-            currDir = (currDir + 4) % 4; 
+            currDir = (currDir + 1) % 4; 
     }
     cout << x << " " << y;
     return 0;
