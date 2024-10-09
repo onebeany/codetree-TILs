@@ -18,10 +18,11 @@ int main() {
     
     int n;
     cin >> n;
-    Person people[3];
-
+    //Person people[n];
+    vector<Person> people(n);
+    
     int slowIdx = 0;
-    for(int i = 0 ; i < 3 ; i++){
+    for(int i = 0 ; i < n ; i++){
         string name, address, location;
         cin >> name >> address >> location;
         people[i] = Person(name, address, location);
