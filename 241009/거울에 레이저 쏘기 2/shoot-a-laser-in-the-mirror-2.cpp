@@ -12,8 +12,8 @@ using namespace std;
 int getDir(int n, int k){
     if(k <= n) return 1;
     else if(k <= 2*n) return 2;
-    else if(k <= 3*n) return 0;
-    else return 3;
+    else if(k <= 3*n) return 3;
+    else return 0;
 }
 
 int InRange(int n, int x, int y){
