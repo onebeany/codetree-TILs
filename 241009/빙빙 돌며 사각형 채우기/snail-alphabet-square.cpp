@@ -24,12 +24,12 @@ int main() {
         int nx = currX + dx[currDir], ny = currY + dy[currDir];
         if(InRange(nx,ny) && arr[nx][ny] == '\0'){
             currX = nx, currY = ny;
-            arr[currX][currY] = 'A' + (i) % ('Z');
+            arr[currX][currY] = 'A' + (i%('Z'-'A'+1));
         }
         else{
             currDir = (currDir + 1) % 4;
             currX += dx[currDir], currY += dy[currDir];
-            arr[currX][currY] = 'A' + (i) % ('Z');
+            arr[currX][currY] = 'A' + (i%('Z'-'A'+1));
         }
     }
 
