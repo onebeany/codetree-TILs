@@ -18,7 +18,7 @@ int main() {
     
     int n;
     cin >> n;
-    vector<Person> people(n);
+    Person people[3];
 
     int slowIdx = 0;
     for(int i = 0 ; i < 3 ; i++){
