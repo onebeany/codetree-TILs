@@ -32,15 +32,14 @@ int main() {
 
     int x = n/2, y = n/2;
     int currDir = 3;
-    
-    int score = 0;
+    int score = arr[x][y];
     for(int i = 0 ; i < t ; i++){
         if(cmd[i] == 'L') currDir = (currDir + 3) % 4;
         else if(cmd[i] == 'R') currDir = (currDir + 1) % 4;
         else {
             int nx = x + dx[currDir], ny = y + dy[currDir];
             if(InRange(nx, ny)){
-                x = nx, y = nx;
+                x = nx, y = ny;
                 score += arr[x][y];
             }
         }
