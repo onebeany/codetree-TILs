@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <vector>
 
 using namespace std;
@@ -18,10 +19,8 @@ int main() {
     int t;
     cin >> n >> t;
 
-    vector<char> cmd(t);
-    for(int i = 0 ; i < t ; i++){
-        cin >> cmd[i];
-    }
+    string cmd;
+    cin >> cmd;
 
     vector<vector<int>> arr(n, vector<int>(n));
     for(int i = 0 ; i < n ; i++){
@@ -38,7 +37,7 @@ int main() {
         else if(cmd[i] == 'R') currDir = (currDir + 1) % 4;
         else {
             int nx = x + dx[currDir], ny = y + dy[currDir];
-            if(InRange(nx, ny)){
+            if(0 <= nx && nx < n && 0 <= ny && ny < n){
                 x = nx, y = ny;
                 score += arr[x][y];
             }
