@@ -19,24 +19,20 @@ bool canMove(int n, int m, int x, int y){
     return true;
 }
 
-int canEscape = 0;
 
-void DFS(int n, int m, int x, int y){
+int canEscape(int n, int m, int x, int y){
 
-    if(x == n-1 && y == m-1) {
-        canEscape = 1;
-        return;
-    }
+    if(x == n-1 && y == m-1) return 1;
 
     for(int i = 0 ; i < 2 ; i++){
         int nx = x + dx[i], ny = y + dy[i];
         if(canMove(n, m, nx, ny)){
             visited[nx][ny] = 1;
-            DFS(n, m, nx, ny);
+            if(canEscape(n, m, nx, ny)) return 1;
         }
     }
 
-    return;
+    return 0;
 }
 
 int main() {
@@ -51,8 +47,7 @@ int main() {
     }
 
     visited[0][0] = 1;
-    DFS(n, m, 0, 0);
-    cout << canEscape;
+    cout << canEscape(n, m, 0, 0);
 
     return 0;
 }
