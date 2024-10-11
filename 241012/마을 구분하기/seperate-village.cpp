@@ -31,7 +31,7 @@ int findTown(int x, int y){
         int nx = x + dx[i], ny = y + dy[i];
         if(canMove(nx, ny)){
             visited[nx][ny] = 1;
-            return numPerson + findTown(nx, ny);
+            numPerson += findTown(nx, ny);
         }
     }
     return numPerson;
