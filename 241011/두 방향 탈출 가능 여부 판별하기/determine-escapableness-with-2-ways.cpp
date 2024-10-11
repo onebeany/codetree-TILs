@@ -15,24 +15,26 @@ bool InRange(int n, int m, int x, int y){
 
 bool canMove(int n, int m, int x, int y){
     if(!InRange(n, m, x, y)) return false;
-    else if (visited[x][y] ||grid[x][y] == 0) return false;
-    else return true;
+    else if (visited[x][y] || grid[x][y] == 0) return false;
+    return true;
 }
 
 int canEscape = 0;
 
 void DFS(int n, int m, int x, int y){
 
+    if(x == n-1 && y == m-1) {
+        canEscape = 1;
+        return;
+    }
+
     for(int i = 0 ; i < 2 ; i++){
         int nx = x + dx[i], ny = y + dy[i];
         if(canMove(n, m, nx, ny)){
-            x = nx, y = ny;
-            visited[x][y] = 1;
-            DFS(n, m, x, y);
+            visited[nx][ny] = 1;
+            DFS(n, m, nx, ny);
         }
     }
-
-    if(x == n-1 && y == m-1) canEscape = 1;
 
     return;
 }
@@ -43,7 +45,7 @@ int main() {
     cin >> n >> m;
 
     for(int i = 0 ; i < n ; i++){
-        for(int j = 0 ; j < n ; j++){
+        for(int j = 0 ; j < m ; j++){
             cin >> grid[i][j];
         }
     }
