@@ -245,14 +245,18 @@ void moveSanta(int dir, int santaIdx){
         santa[santaIdx].isKO = true;
         santa[santaIdx].koTurns = 1;
         int newSantaX = nx - dx[dir] * d, newSantaY = ny - dy[dir] * d;
+#if DEBUG
+        cout << "newSanta: (" << newSantaX << ", " << newSantaY << ")" << endl;
+#endif
         if(!InRange(newSantaX, newSantaY)){ // 게임판에서 벗어나는 경우
         #if DEBUG
             cout << "out of range!" << endl;
         #endif
             santa[santaIdx].isOut = true;
         }
+        else if(newSantaX == x && newSantaY == y) return;
         else{
-            if(grid[newSantaX][newSantaY] != 0){ // 충돌 후 이동된 셀에 산타가 있다면
+            if(grid[newSantaX][newSantaY] != 0){ // 충돌 후 이동된 셀에 산타가 있다면 (본인이면 안됨)
                 bool isSantaCollision = true;
                 interaction(newSantaX, newSantaY, dir, isSantaCollision); // 상호작용
             }
